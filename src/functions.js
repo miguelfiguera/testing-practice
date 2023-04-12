@@ -27,12 +27,12 @@ const calculator=(()=>{
 
 
 const caesar = function(string, displacement) {
-    ciphered = "";
+    let ciphered = "";
       if (displacement<0 && displacement >= -26){ displacement = 21}
       else if (displacement > 26){displacement = 23}
       else if (displacement == -29) {displacement = 23}
-      for (i=0; i<string.length; i++ ) {
-        char = string[i].charCodeAt();
+      for (let i=0; i<string.length; i++ ) {
+        let char = string[i].charCodeAt();
         if((char>=65 && char <=90) && (char+displacement >= 91)){
         ciphered+= String.fromCharCode(char + displacement-26)}
         else if ((char>=91 && char<97 ) || (char<=64 || char>=123)){
@@ -46,4 +46,6 @@ const caesar = function(string, displacement) {
     };
 
 
-const obj=analyzeArray([1,2,3,4,5,65,7,89,98,7897,6])
+//const obj=analyzeArray([1,2,3,4,5,65,7,89,98,7897,6])
+
+export {/*obj,*/ caesar,capitalize,reverseString,calculator}
